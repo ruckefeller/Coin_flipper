@@ -1,0 +1,16 @@
+import random
+
+def flipper(a):
+	h = 0		#number of heads, reset each time the function is called
+	luck_e = []			#list containing results of coin toss
+	luck_e = [random.randint(1,2) for i in range(a)]    #1 for heads, 2 for tails
+	h = luck_e.count(1)
+	return h
+
+def driver(x, y):
+        stats = []              #list to store results of flipper function
+        stats = [flipper(x) for m in range(y)]
+        for i in range(x+1):            #x+1 to include 10 heads
+                print('you have %d heads appearing %d times' %(i, stats.count(i)))
+
+driver(10, 1000000)
